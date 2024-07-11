@@ -21,7 +21,8 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
 ## Architecture After Hardening / Security Controls
-![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/5cf75e1c-ad81-4b8c-bcaf-2908c9d4f0ce)
+![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/45998cd1-ebcf-46de-b49d-5e84c84d55f7)
+
 
 
 - For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint

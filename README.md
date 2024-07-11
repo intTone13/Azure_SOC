@@ -1,5 +1,6 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Screenshot (19)](https://github.com/intTone13/Azure_SOC/assets/124211905/5f933cd4-5f83-41fd-b5bf-209c7bc7a194)
+![Screenshot (20)](https://github.com/intTone13/Azure_SOC/assets/124211905/677fb474-8e69-41c9-8856-23be2e42ad1b)
+
 
 
 
@@ -14,14 +15,16 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
-![Screenshot (13)](https://github.com/intTone13/Azure_SOC/assets/124211905/d86cedf5-6ab6-4750-ae20-4392aed3f0a2)
+![Screenshot (23)](https://github.com/intTone13/Azure_SOC/assets/124211905/e8ef4bc4-87be-4e81-9dd0-696ab8cdf97d)
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+
+- For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
 ## Architecture After Hardening / Security Controls
-![Screenshot (17)](https://github.com/intTone13/Azure_SOC/assets/124211905/89803181-f7c1-4893-b7b5-2c0e8911941e)
+![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/5cf75e1c-ad81-4b8c-bcaf-2908c9d4f0ce)
 
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+
+- For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## The architecture of the mini honeynet in Azure consists of the following components:
 

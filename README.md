@@ -16,13 +16,14 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 ## Architecture Before Hardening / Security Controls
 ![Screenshot (13)](https://github.com/intTone13/Azure_SOC/assets/124211905/d86cedf5-6ab6-4750-ae20-4392aed3f0a2)
 
+For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
 ## Architecture After Hardening / Security Controls
 ![Screenshot (17)](https://github.com/intTone13/Azure_SOC/assets/124211905/89803181-f7c1-4893-b7b5-2c0e8911941e)
 
+For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
-
-The architecture of the mini honeynet in Azure consists of the following components:
+## The architecture of the mini honeynet in Azure consists of the following components:
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
@@ -31,10 +32,6 @@ The architecture of the mini honeynet in Azure consists of the following compone
 - Azure Key Vault
 - Azure Storage Account
 - Microsoft Sentinel (SIEM)
-
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
-
-For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
 ![Screenshot (5)](https://github.com/intTone13/Azure_SOC/assets/124211905/ce4d1602-05cb-41ee-a89a-b1d3e3138243)<br>
@@ -55,7 +52,7 @@ Stop Time 2024-07-05 10:40:06 PM
 | SecurityIncident         | 144
 | AzureNetworkAnalytics_CL | 1896
 
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 

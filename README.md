@@ -14,33 +14,35 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 - SecurityIncident (Incidents created by Sentinel)
 - AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
-## Architecture Before Hardening / Security Controls
-![Screenshot (23)](https://github.com/intTone13/Azure_SOC/assets/124211905/e8ef4bc4-87be-4e81-9dd0-696ab8cdf97d)
-
-
-- For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
-
-## Architecture After Hardening / Security Controls
-![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/45998cd1-ebcf-46de-b49d-5e84c84d55f7)
-
-
-
-- For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## The architecture of the mini honeynet in Azure consists of the following components:
 
-- Virtual Network (VNet)
+- Virtual Network (VNet) 
 - Network Security Group (NSG)
-- Virtual Machines (1 windows, 1 linux)
+- Virtual Machines (2 windows, 1 linux)
 - Log Analytics Workspace (KQL Queries)
 - Azure Key Vault
 - Azure Storage Account
 - Microsoft Sentinel (SIEM)
 
+
+## Architecture Before Hardening / Security Controls
+![Screenshot (23)](https://github.com/intTone13/Azure_SOC/assets/124211905/e8ef4bc4-87be-4e81-9dd0-696ab8cdf97d)
+
+- For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
+
+
+## Architecture After Hardening / Security Controls
+![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/45998cd1-ebcf-46de-b49d-5e84c84d55f7)
+
+- For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
+
+
 ## Attack Maps Before Hardening / Security Controls
 ![Screenshot (5)](https://github.com/intTone13/Azure_SOC/assets/124211905/ce4d1602-05cb-41ee-a89a-b1d3e3138243)<br>
 ![Screenshot (6)](https://github.com/intTone13/Azure_SOC/assets/124211905/d1a3118b-86a6-4f9f-baa6-1ba97225c5fc)<br>
 ![Screenshot (7)](https://github.com/intTone13/Azure_SOC/assets/124211905/f2e17c07-5c11-4086-9efe-bf8d979f414c)<br>
+
 
 ## Metrics Before Hardening / Security Controls
 
@@ -56,9 +58,11 @@ Stop Time 2024-07-05 10:40:06 PM
 | SecurityIncident         | 144
 | AzureNetworkAnalytics_CL | 1896
 
+
 ## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+
 
 ## Metrics After Hardening / Security Controls
 
@@ -73,6 +77,16 @@ Stop Time	2024-07-07 09:27:22 PM
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
+
+## Additional Technologies and Regulations utilized:
+
+- Microsoft Defender for Cloud to Protect Cloud Resources
+- Windows Remote Desktop for Remote Access
+- Command Line Interface (CLI) for System Management
+- PowerShell for Automation and Configuration Management
+- [NIST SP 800-53 Revision 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) for Security Controls
+- [NIST SP 800-61 Revision 2](https://www.nist.gov/privacy-framework/nist-sp-800-61) for Incident Handling
+
 
 ## Conclusion
 

@@ -1,5 +1,6 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Screenshot (12)](https://github.com/intTone13/Azure_SOC/assets/124211905/e3afac15-8c1a-46bd-a9fa-36005bb6e4d3)
+![Screenshot (19)](https://github.com/intTone13/Azure_SOC/assets/124211905/5f933cd4-5f83-41fd-b5bf-209c7bc7a194)
+
 
 
 ## Introduction
@@ -25,7 +26,7 @@ The architecture of the mini honeynet in Azure consists of the following compone
 
 - Virtual Network (VNet)
 - Network Security Group (NSG)
-- Virtual Machines (2 windows, 1 linux)
+- Virtual Machines (1 windows, 1 linux)
 - Log Analytics Workspace
 - Azure Key Vault
 - Azure Storage Account
@@ -74,6 +75,4 @@ Stop Time	2024-07-07 09:27:22 PM
 
 ## Conclusion
 
-In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
-
-It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+For this project, I set up a small honeynet in Microsoft Azure and connected it to a Log Analytics workspace. I used Microsoft Sentinel to trigger alerts and create incidents based on the logs. I measured the metrics in the insecure environment before adding security controls, and then again after applying the security measures. The results showed that the number of security events and incidents went down significantly after the security controls were in place, proving their effectiveness.

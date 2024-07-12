@@ -31,18 +31,19 @@ In this project, I build a mini honeynet in Azure and ingest log sources from va
 
 - For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
+## Attack Maps Before Hardening / Security Controls
+![Screenshot (5)](https://github.com/intTone13/Azure_SOC/assets/124211905/ce4d1602-05cb-41ee-a89a-b1d3e3138243)<br>
+![Screenshot (6)](https://github.com/intTone13/Azure_SOC/assets/124211905/d1a3118b-86a6-4f9f-baa6-1ba97225c5fc)<br>
+![Screenshot (7)](https://github.com/intTone13/Azure_SOC/assets/124211905/f2e17c07-5c11-4086-9efe-bf8d979f414c)<br>
 
 ## Architecture After Hardening / Security Controls
 ![Screenshot (25)](https://github.com/intTone13/Azure_SOC/assets/124211905/45998cd1-ebcf-46de-b49d-5e84c84d55f7)
 
 - For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
+## Attack Maps After Hardening / Security Controls
 
-## Attack Maps Before Hardening / Security Controls
-![Screenshot (5)](https://github.com/intTone13/Azure_SOC/assets/124211905/ce4d1602-05cb-41ee-a89a-b1d3e3138243)<br>
-![Screenshot (6)](https://github.com/intTone13/Azure_SOC/assets/124211905/d1a3118b-86a6-4f9f-baa6-1ba97225c5fc)<br>
-![Screenshot (7)](https://github.com/intTone13/Azure_SOC/assets/124211905/f2e17c07-5c11-4086-9efe-bf8d979f414c)<br>
-
+```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
 ## Metrics Before Hardening / Security Controls
 
@@ -57,12 +58,6 @@ Stop Time 2024-07-05 10:40:06 PM
 | SecurityAlert            | 1
 | SecurityIncident         | 144
 | AzureNetworkAnalytics_CL | 1896
-
-
-## Attack Maps After Hardening / Security Controls
-
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
-
 
 ## Metrics After Hardening / Security Controls
 
